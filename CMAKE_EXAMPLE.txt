@@ -1,0 +1,43 @@
+
+# setta versione minima di cmake 
+cmake_minimum_required(VERSION 3.12.1)
+# setta nome progetto
+project (hello)
+# setta nome eseguibile e file sorgente da compilare
+add_executable(hello main.cpp)
+# setta tipo di build release/debug/profile
+set(CMAKE_BUILD_TYPE Release)
+# o debug
+#set(CMAKE_BUILD_TYPE Debug)
+#Setta directory degli include
+#include_directories(include)
+# per settaggio manuale dei sorgenti da compilare
+#set(SOURCES src/mainapp.cpp src/Student.cpp)
+# oppure si può usare GLOB con wildcards:
+#file(GLOB SOURCES "src/*.cpp")
+ 
+# Da usare per generare shared library invece che eseguibile
+#add_library(testStudent SHARED ${SOURCES})
+# per libreria statica
+#add_library(testStudent STATIC ${SOURCES})
+# setta dir di installazione per make install
+#install(TARGETS testStudent DESTINATION /usr/lib)
+#install(TARGETS hello DESTINATION /usr/bin)
+
+# LINKARE A LIBRERIE
+# PER LIBRERIA DINAMICA
+# nome libreria
+#set ( PROJECT_LINK_LIBS libtestStudent.so )
+# percorso
+#link_directories( ~/exploringBB/extras/cmake/studentlib_shared/build )
+ 
+# PER LIBRERIA STATICA 
+# nome libreria
+#set ( PROJECT_LINK_LIBS libtestStudent.a )
+#link_directories( ~/exploringBB/extras/cmake/studentlib_static/build )
+# directory contenente gli include
+#include_directories(~/exploringBB/extras/cmake/studentlib_shared/include)
+# eseguibile e sorgente 
+#add_executable(libtest libtest.cpp)
+# LINKA
+#target_link_libraries(libtest ${PROJECT_LINK_LIBS} )
